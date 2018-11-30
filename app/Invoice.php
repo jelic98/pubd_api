@@ -14,13 +14,11 @@ class Invoice extends Model {
 		'paid'
 	];
 
-	protected $dates = ['dete_created', 'date_paid'];
-	
 	public function company() {
-		return $this->belongsTo('App\Company', 'company');
+		return $this->belongsTo('App\Company');
 	}
 
 	public function corrency() {
-		return $this->belongsTo('App\Currency', 'currency');
+		return $this->belongsTo('App\Currency');
 	}
 }

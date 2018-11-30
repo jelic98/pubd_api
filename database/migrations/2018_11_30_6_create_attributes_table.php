@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableAttributes extends Migration {
+class CreateAttributesTable extends Migration {
 
     public function up() {
         Schema::create('attributes', function (Blueprint $table) {

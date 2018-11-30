@@ -12,13 +12,13 @@ class Session extends Model {
 		'finished'
 	];
 
-	protected $dates = ['dete_started', 'date_finished'];
+	protected $dates = ['date_started', 'date_finished'];
 
 	public function company() {
-		return $this->belongsTo('App\Company', 'company');
+		return $this->belongsTo('App\Company');
 	}
 
 	public function place() {
-		return $this->belongsTo('App\Place', 'place');
+		return $this->belongsTo('App\Place');
 	}
 }

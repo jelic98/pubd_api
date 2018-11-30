@@ -22,9 +22,7 @@ class Company extends Model {
 		'paymentAlert'
 	];
 
-	protected $dates = ['dete_created', 'date_deleted'];
-	
 	public function plan() {
-		return $this->belongsTo('App\Plan', 'plan');
+		return $this->belongsTo('App\Plan');
 	}
 }

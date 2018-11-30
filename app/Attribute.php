@@ -13,6 +13,6 @@ class Place extends Model {
 	];
 
 	public function parent() {
-		return $this->belongsTo('App\Attribute', 'parent');
+		return $this->belongsTo('App\Attribute');
 	}
 }

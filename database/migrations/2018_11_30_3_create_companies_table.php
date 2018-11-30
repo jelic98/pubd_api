@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableCompanies extends Migration {
+class CreateCompaniesTable extends Migration {
 
     public function up() {
         Schema::create('companies', function (Blueprint $table) {
@@ -11,11 +11,14 @@ class CreateTableCompanies extends Migration {
 	
 			$table->string('name');
 			$table->string('domain');
-			$table->string('username')->unique();
+			$table->string('username');
 			$table->string('password', 128);
 			$table->string('email');
 			$table->string('phone');
-	
+
+			$table->dateTime('date_created');
+			$table->dateTime('date_deleted');
+
 			$table->integer('plan')->unsigned()->nullable();
 			$table->foreign('plan')->references('id')->on('plans');
 			
@@ -24,7 +27,6 @@ class CreateTableCompanies extends Migration {
 			$table->boolean('paymentAlert')->default(0);
 			
 			$table->softDeletes();
-			$table->timestamps();
         });
     }
 

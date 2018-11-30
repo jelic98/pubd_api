@@ -14,6 +14,6 @@ class Plan extends Model {
 	];
 
 	public function currency() {
-		return $this->belongsTo('App\Currency', 'currency');
+		return $this->belongsTo('App\Currency');
 	}
 }

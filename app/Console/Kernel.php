@@ -13,8 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
-    ];
+		Commands\DropDb::class
+	];
 
     /**
      * Define the application's command schedule.

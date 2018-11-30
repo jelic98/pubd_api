@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableInvoices extends Migration {
+class CreateInvoicesTable extends Migration {
 
     public function up() {
         Schema::create('invoices', function (Blueprint $table) {
@@ -14,14 +14,15 @@ class CreateTableInvoices extends Migration {
 			$table->integer('places');
 			$table->integer('sessions');
 			$table->boolean('paid');
+
+			$table->dateTime('date_created');
+			$table->dateTime('date_paid');
 	
 			$table->integer('company')->unsigned()->nullable();
 			$table->foreign('company')->references('id')->on('companies');
 
 			$table->integer('currency')->unsigned()->nullable();
 			$table->foreign('currency')->references('id')->on('currencies');
-			
-			$table->timestamps();
         });
     }
 
