@@ -1,0 +1,14 @@
+.env
+/vendor
+/.idea
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+bootstrap/compiled.php
+node_modules/
+app/storage
+public/storage
+public/hot
+storage/*.key
