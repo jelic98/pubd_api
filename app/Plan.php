@@ -8,9 +8,9 @@ class Plan extends Model {
 
     protected $fillable = [
 		'base',
-		'sessionLimit',
-		'placesLimit',
-		'allowOverflow'
+		'sessions_limit',
+		'places_limit',
+		'allow_overflow'
 	];
 
 	public function currency() {

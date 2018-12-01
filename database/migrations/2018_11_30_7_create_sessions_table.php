@@ -9,7 +9,7 @@ class CreateSessionsTable extends Migration {
         Schema::create('sessions', function (Blueprint $table) {
             $table->bigIncrements('id');
 			
-			$table->string('hash', 64);
+			$table->string('hash', 32);
 			$table->integer('requests');
 			$table->boolean('finished');
 

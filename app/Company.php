@@ -12,17 +12,17 @@ class Company extends Model {
     protected $fillable = [
         'name', 
 		'domain',
-		'username',
-		'password',
-		'email',
-		'phone',
 		'plan',
-		'overflowBlock',
-		'paymentBlock',
-		'paymentAlert'
+		'overflow_block',
+		'payment_block',
+		'payment_alert'
 	];
 
 	public function plan() {
 		return $this->belongsTo('App\Plan');
+	}
+
+	public function owner() {
+		return $this->belongsTo('App\User');
 	}
 }

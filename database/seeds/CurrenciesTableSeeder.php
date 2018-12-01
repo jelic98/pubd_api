@@ -2,7 +2,7 @@
 	
 use Illuminate\Database\Seeder;
 
-class CurrencyTableSeeder extends Seeder {
+class CurrenciesTableSeeder extends Seeder {
 
 	public function run() {
 		DB::table('currencies')->delete();

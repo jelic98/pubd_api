@@ -12,8 +12,6 @@ class Session extends Model {
 		'finished'
 	];
 
-	protected $dates = ['date_started', 'date_finished'];
-
 	public function company() {
 		return $this->belongsTo('App\Company');
 	}

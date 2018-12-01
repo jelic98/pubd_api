@@ -13,8 +13,6 @@ class Place extends Model {
 		'image'
 	];
 
-	protected $dates = ['date_created', 'date_deleted'];
-	
 	public function company() {
 		return $this->belongsTo('App\Company');
 	}

@@ -14,7 +14,7 @@ $router->group(['prefix' => 'api/v1'], function($router) {
 
 	$router->post('login', 'UsersController@login');
 	
-	$router->group(['prefix' => 'company', 'middleware' => 'auth'], function($router) {
+	$router->group(['prefix' => 'company'], function($router) {
 		$router->post('/', 'CompanyController@create');
 		$router->get('all', 'CompanyController@all');
 		$router->get('{id}', 'CompanyController@get');

@@ -11,20 +11,19 @@ class CreateCompaniesTable extends Migration {
 	
 			$table->string('name');
 			$table->string('domain');
-			$table->string('username');
-			$table->string('password', 128);
-			$table->string('email');
-			$table->string('phone');
 
 			$table->dateTime('date_created');
 			$table->dateTime('date_deleted');
 
 			$table->integer('plan')->unsigned()->nullable();
 			$table->foreign('plan')->references('id')->on('plans');
+
+			$table->integer('owner')->unsigned()->nullable();
+			$table->foreign('owner')->references('id')->on('users');
 			
-			$table->boolean('overflowBlock')->default(0);
-			$table->boolean('paymentBlock')->default(0);
-			$table->boolean('paymentAlert')->default(0);
+			$table->boolean('overflow_block')->default(0);
+			$table->boolean('payment_block')->default(0);
+			$table->boolean('payment_alert')->default(0);
 			
 			$table->softDeletes();
         });

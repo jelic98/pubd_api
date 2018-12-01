@@ -10,8 +10,8 @@ class CreatePlansTable extends Migration {
             $table->increments('id');
 
 			$table->float('base', 8, 2)->unsigned();
-			$table->bigInteger('sessionLimit')->unsigned();
-			$table->bigInteger('placesLimit')->unsigned();
+			$table->bigInteger('sessions_limit')->unsigned();
+			$table->bigInteger('places_limit')->unsigned();
 
 			$table->integer('currency')->unsigned()->nullable();
 			$table->foreign('currency')->references('id')->on('currencies');
