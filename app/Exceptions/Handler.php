@@ -17,13 +17,19 @@ class Handler extends ExceptionHandler {
     }
 
 	public function render($request, Exception $e) {
+		if(env('APP_DEBUG', false)) {
+        	return parent::render($request, $e);
+		}
+		
+		$response = [];	
+	
 		if(is_object($e)) {
 			$e = substr(strrchr(get_class($e), "\\"), 1);
 		}
 
-    	return response()->json([
-			'code' => method_exists($e, 'getStatusCode') ? $e->getStatusCode() : 500, 
-			'message' => empty($e) ? 'Server error' : $e 
-		]);
+		$response['code'] = method_exists($e, 'getStatusCode') ? $e->getStatusCode() : 500;
+		$reponse['message'] = empty($e) ? 'Server error' : $e;
+
+    	return response()->json($response);
 	} 
 }

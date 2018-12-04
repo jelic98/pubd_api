@@ -15,10 +15,10 @@ class Invoice extends Model {
 	];
 
 	public function company() {
-		return $this->belongsTo('App\Company');
+		return $this->belongsTo('App\Company', 'company');
 	}
 
 	public function corrency() {
-		return $this->belongsTo('App\Currency');
+		return $this->belongsTo('App\Currency', 'currency');
 	}
 }

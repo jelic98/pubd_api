@@ -15,14 +15,15 @@ class CreateInvoicesTable extends Migration {
 			$table->integer('sessions');
 			$table->boolean('paid');
 
-			$table->dateTime('date_created');
-			$table->dateTime('date_paid');
+			$table->dateTime('paid_at')->nullable();
 	
-			$table->integer('company')->unsigned()->nullable();
+			$table->integer('company')->unsigned();
 			$table->foreign('company')->references('id')->on('companies');
 
-			$table->integer('currency')->unsigned()->nullable();
+			$table->integer('currency')->unsigned();
 			$table->foreign('currency')->references('id')->on('currencies');
+			
+			$table->timestamps();
         });
     }
 

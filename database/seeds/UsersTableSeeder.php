@@ -5,8 +5,8 @@ use Illuminate\Database\Seeder;
 class UsersTableSeeder extends Seeder {
 
 	public function run() {
-		DB::table('currencies')->delete();
-		DB::table('currencies')->insert([
+		DB::table('users')->delete();
+		DB::table('users')->insert([
 			[
 				'username' => 'test',
 				'password' => 'test123',

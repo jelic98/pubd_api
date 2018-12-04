@@ -13,10 +13,10 @@ class CreatePlansTable extends Migration {
 			$table->bigInteger('sessions_limit')->unsigned();
 			$table->bigInteger('places_limit')->unsigned();
 
-			$table->integer('currency')->unsigned()->nullable();
+			$table->integer('currency')->unsigned();
 			$table->foreign('currency')->references('id')->on('currencies');
 			
-			$table->boolean('allowOverflow')->default(0);
+			$table->boolean('allow_overflow')->default(0);
         });
     }
 

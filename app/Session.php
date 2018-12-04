@@ -13,10 +13,10 @@ class Session extends Model {
 	];
 
 	public function company() {
-		return $this->belongsTo('App\Company');
+		return $this->belongsTo('App\Company', 'company');
 	}
 
 	public function place() {
-		return $this->belongsTo('App\Place');
+		return $this->belongsTo('App\Place', 'place');
 	}
 }

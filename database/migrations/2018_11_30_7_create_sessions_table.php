@@ -13,14 +13,15 @@ class CreateSessionsTable extends Migration {
 			$table->integer('requests');
 			$table->boolean('finished');
 
-			$table->dateTime('date_started');
-			$table->dateTime('date_finished');
+			$table->dateTime('date_finished')->nullable();
 	
-			$table->integer('company')->unsigned()->nullable();
+			$table->integer('company')->unsigned();
 			$table->foreign('company')->references('id')->on('companies');
 
 			$table->integer('place')->unsigned()->nullable();
 			$table->foreign('place')->references('id')->on('places');
+			
+			$table->timestamps();
         });
     }
 

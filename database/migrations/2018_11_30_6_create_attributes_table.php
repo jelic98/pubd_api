@@ -11,7 +11,7 @@ class CreateAttributesTable extends Migration {
 
 			$table->string('name');
 			$table->string('question');
-			$table->boolean('parentValue');
+			$table->boolean('parent_value')->nullable();
 
 			$table->integer('parent')->unsigned()->nullable();
 			$table->foreign('parent')->references('id')->on('attributes');

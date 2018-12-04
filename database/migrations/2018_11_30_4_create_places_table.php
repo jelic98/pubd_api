@@ -12,15 +12,13 @@ class CreatePlacesTable extends Migration {
 			$table->string('name');
 			$table->string('address');
 			$table->string('url');
-			$table->binary('image');
+			$table->string('image')->nullable();
 	
-			$table->dateTime('date_created');
-			$table->dateTime('date_deleted');
-			
-			$table->integer('company')->unsigned()->nullable();
+			$table->integer('company')->unsigned();
 			$table->foreign('company')->references('id')->on('companies');
 			
 			$table->softDeletes();
+			$table->timestamps();
         });
     }
 

@@ -13,6 +13,6 @@ class Attribute extends Model {
 	];
 
 	public function parent() {
-		return $this->belongsTo('App\Attribute');
+		return $this->belongsTo('App\Attribute', 'parent');
 	}
 }

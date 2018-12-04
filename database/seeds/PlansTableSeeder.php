@@ -11,21 +11,24 @@ class PlansTableSeeder extends Seeder {
 				'base' => 40.0,
 				'sessions_limit' => 10000,
 				'places_limit' => 10,
-				'allow_overflow' => 'true'
+				'currency' => 1,
+				'allow_overflow' => 1
 			],
 			[
 				'base' => 40.0,
 				'sessions_limit' => 30000,
 				'places_limit' => 15,
-				'allow_overflow' => 'true'
+				'currency' => 2,
+				'allow_overflow' => 1
 			],
 			[
 				'base' => 40.0,
 				'sessions_limit' => 40000,
 				'places_limit' => 20,
-				'allow_overflow' => 'false'
+				'currency' => 1,
+				'allow_overflow' => 0
 			]
-		);
+		]);
     }
 }
 ?>

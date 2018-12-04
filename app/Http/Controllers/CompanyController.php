@@ -9,14 +9,17 @@ use Illuminate\Http\Request;
 class CompanyController extends Controller { 
 	
 	public function create(Request $request) {
-		$fields = [
+		$this->validate($request, [
 			'name' => 'required',
 			'domain' => 'required'
-		];
-
-		$this->validate($request, $fields);
+		]);
+	
+		$request['plan'] = Plan::create();
+		$request['owner'] = UserController::current();
 
 		$company = Company::create($request->all());
+		
+		return response()->json($company);
 	}
 	
 	public function update($id) {
@@ -26,11 +29,13 @@ class CompanyController extends Controller {
 	}
 
 	public function get($id) {
-		return Company::findOrfail($id);
+		$company = Company::with('plan', 'owner')->findOrFail($id);
+
+		return response()->json($company);	
 	}
 
 	public function all() {
-		return response()->json(Company::all());	
+		return response()->json(Company::with('plan', 'owner')->get());
 	}
 	
 	public function delete($id) {

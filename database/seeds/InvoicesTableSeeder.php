@@ -12,7 +12,7 @@ class InvoicesTableSeeder extends Seeder {
 				'base' => 40.0,
 				'places' => 5,
 				'sessions' => 10000,
-				'paid' => 'true',
+				'paid' => 1,
 				'company' => 1,
 				'currency' => 1
 			],
@@ -21,7 +21,7 @@ class InvoicesTableSeeder extends Seeder {
 				'base' => 40.0,
 				'places' => 10,
 				'sessions' => 30000,
-				'paid' => 'false',
+				'paid' => 0,
 				'company' => 1,
 				'currency' => 1
 			],
@@ -30,11 +30,11 @@ class InvoicesTableSeeder extends Seeder {
 				'base' => 40.0,
 				'places' => 15,
 				'sessions' => 50000,
-				'paid' => 'false',
+				'paid' => 0,
 				'company' => 3,
 				'currency' => 2
 			]
-		);
+		]);
     }
 }
 ?>

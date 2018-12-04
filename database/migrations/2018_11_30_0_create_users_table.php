@@ -10,9 +10,9 @@ class CreateUsersTable extends Migration {
             $table->increments('id');
 	
 			$table->string('username');
-			$table->string('password', 128);
+			$table->string('password', 64);
 			$table->string('email');
-			$table->boolean('is_admin');
+			$table->boolean('is_admin')->default(0);
 
 			$table->softDeletes();
         });
