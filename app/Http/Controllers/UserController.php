@@ -40,6 +40,10 @@ class UserController extends Controller {
 		return response('Success', 200);
 	}
 
+	public function contact(Request $request) {
+	
+	}
+
 	public function createToken() {
 		do {
 			$token = str_random(64);

@@ -26,6 +26,8 @@ $app = new Laravel\Lumen\Application(
 $app->withFacades();
 $app->withEloquent();
 
+$app->configure('mail');
+
 /*
 |--------------------------------------------------------------------------
 | Register Container Bindings
@@ -62,9 +64,9 @@ $app->singleton(
 //     App\Http\Middleware\ExampleMiddleware::class
 // ]);
 
-// $app->routeMiddleware([
-//     'auth' => App\Http\Middleware\Authenticate::class,
-// ]);
+$app->routeMiddleware([
+	'auth' => App\Http\Middleware\Authenticate::class,
+]);
 
 /*
 |--------------------------------------------------------------------------
@@ -78,7 +80,9 @@ $app->singleton(
 */
 
 // $app->register(App\Providers\AppServiceProvider::class);
-// $app->register(App\Providers\AuthServiceProvider::class);
+$app->register(App\Providers\AuthServiceProvider::class);
+$app->register(\Illuminate\Mail\MailServiceProvider::class);
+$app->register(PhanAn\CascadingConfig\CascadingConfigServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 
 /*
